@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="portfolioApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umang Jadav - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="MainController" id="home">
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <h2>Portfolio</h2>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>        
+        <div class="hero">
+            <h1>{{ portfolio.name }}</h1>
+            <p id="typingText">{{ displayedTagline }}</p>
+        </div>        
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>{{ portfolio.about }}</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <!-- Programming Languages -->
+            <div class="skills-category">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li>Java</li>
+                    <li>.Net (Dot Net)</li>
+                    <li>XML</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React JS</li>
+                </ul>
+            </div>
+
+            <!-- Tools Used -->
+            <div class="skills-category">
+                <h3>Tools Used</h3>
+                <ul>
+                    <li>VS Code</li>
+                    <li>Visual Studio</li>
+                    <li>Android Studio</li>
+                    <li>Git</li>
+                    <li>Oracle</li>
+                    <li>XAMPP</li>
+                </ul>
+            </div>
+
+            <!-- Databases -->
+            <div class="skills-category">
+                <h3>Databases</h3>
+                <ul>
+                    <li>MySQL</li>
+                    <li>SQLite</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-card" ng-repeat="project in portfolio.projects">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            <p><b><span class="programming-title">Programming Languages Used: </span></b>{{ project.technologies }}</p>
+            <a class="btn" ng-if="project.link" ng-href="{{ project.link }}" target="_blank">View Project</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out if you'd like to collaborate or connect!</p>
+        <p>Email me at: <a href="mailto:{{ portfolio.contact.email }}">{{ portfolio.contact.email }}</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Umang Jadav. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
