@@ -4,7 +4,7 @@ app.controller('MainController', function($scope, $timeout) {
     $scope.portfolio = {
         name: "Umang Jadav",
         taglineList: [
-            "Android Application Developer",
+            "Software Developer",
             "Ready to Innovate, Eager to Learn",
             "New to IT, But Ready to Lead the Way",
             "Fresh Talent, Limitless Potential",
